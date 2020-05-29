@@ -2,27 +2,24 @@ version: "3.7"
 services:
 
   web:
-    image: "node:current"
-    privileged: true
+    build:
+      context: "."
+    #user: pptruser
     tty: true
     stdin_open: true
+    cap_add:
+      - SYS_ADMIN
     restart: always
-    working_dir: /home/node/app
+    working_dir: /home/app/node
     environment:
       - NODE_ENV=devlopment
     volumes:
-      - ./src/:/home/node/app
+      - ./src/:/home/app/node
     ports:
       - "8081:8081"
-    command: "npm start"
+    command: "npm run dev"
     networks:
       - backend
 
 networks:
   backend:
-
-volumes:
-  dbdata:
-    driver: local
-    labels:
-      c4n.project.name: ${COMPOSE_PROJECT_NAME}

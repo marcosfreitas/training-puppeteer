@@ -1,0 +1,25 @@
+{
+  "name": "training_puppeteer",
+  "author": "Marcos Freitas",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "npm install; nodemon index.js --ignore __tests__",
+    "test": "jest --detectOpenHandles"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "jest": "^25.5.4",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "puppeteer": "^3.1.0",
+    "puppeteer-extra": "^3.1.9",
+    "puppeteer-extra-plugin-stealth": "^2.4.9",
+    "yarn": "^1.22.4"
+  },
+  "license": "GPL-v3",
+  "description": ""
+}
